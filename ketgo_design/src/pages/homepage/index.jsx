@@ -93,7 +93,7 @@ const Homepage = () => {
           <Image
             src={"https://image.lexica.art/full_jpg/45cc0ae0-efd5-4305-9e65-6b38b5536d24"}
             alt="Modern architecture building"
-            className="w-full h-full object-cover object-right"
+            className="w-screen h-full object-cover object-right"
           />
           <div className="bg-black opacity-65 absolute z-0 inset-0 "></div>
         </div>

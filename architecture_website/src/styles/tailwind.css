@@ -1,0 +1,134 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+/* Google Fonts Import */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap');
+
+/* Custom CSS Variables */
+:root {
+  /* Primary Colors */
+  --color-primary: #1e293b; /* slate-800 */
+  --color-primary-light: #334155; /* slate-700 */
+  --color-primary-dark: #0f172a; /* slate-900 */
+  --color-accent: #f59e0b; /* amber-500 */
+  
+  /* Neutral Colors */
+  --color-white: #ffffff; /* white */
+  --color-light: #f9fafb; /* gray-50 */
+  --color-light-gray: #f3f4f6; /* gray-100 */
+  --color-medium-gray: #d1d5db; /* gray-300 */
+  --color-dark-gray: #4b5563; /* gray-600 */
+  --color-black: #111827; /* gray-900 */
+  
+  /* Semantic Colors */
+  --color-success: #16a34a; /* green-600 */
+  --color-warning: #f59e0b; /* amber-500 */
+  --color-error: #dc2626; /* red-600 */
+  --color-info: #2563eb; /* blue-600 */
+  
+  /* Border Radius */
+  --border-radius-sm: 0.25rem;
+  --border-radius: 0.375rem;
+  --border-radius-md: 0.5rem;
+  --border-radius-lg: 0.75rem;
+  --border-radius-xl: 1rem;
+  
+  /* Transition */
+  --transition-default: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Animation Classes */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideInRight {
+  from { transform: translateX(100%); }
+  to { transform: translateX(0); }
+}
+
+@keyframes slideInLeft {
+  from { transform: translateX(-100%); }
+  to { transform: translateX(0); }
+}
+
+@keyframes slideInUp {
+  from { transform: translateY(100%); }
+  to { transform: translateY(0); }
+}
+
+@keyframes scaleIn {
+  from { transform: scale(0.95); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.animate-fade-in {
+  animation: fadeIn var(--transition-default);
+}
+
+.animate-slide-in-right {
+  animation: slideInRight var(--transition-default);
+}
+
+.animate-slide-in-left {
+  animation: slideInLeft var(--transition-default);
+}
+
+.animate-slide-in-up {
+  animation: slideInUp var(--transition-default);
+}
+
+.animate-scale-in {
+  animation: scaleIn var(--transition-default);
+}
+
+/* Custom Component Classes */
+@layer components {
+  /* Button Styles */
+  .btn {
+    @apply inline-flex items-center justify-center rounded font-medium transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-60 disabled:cursor-not-allowed;
+  }
+  
+  .btn-primary {
+    @apply bg-accent text-black font-semibold hover:bg-amber-600 focus:ring-amber-500;
+  }
+  
+  .btn-secondary {
+    @apply border-2 border-primary text-primary hover:bg-primary hover:text-white focus:ring-primary;
+  }
+  
+  .btn-tertiary {
+    @apply text-primary hover:text-primary-light focus:ring-primary;
+  }
+  
+  /* Input Styles */
+  .form-input {
+    @apply w-full rounded border border-medium-gray bg-white px-3 py-2 text-black placeholder-dark-gray focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent disabled:bg-light-gray disabled:text-dark-gray;
+  }
+  
+  .form-label {
+    @apply block text-sm font-medium text-dark-gray mb-1;
+  }
+  
+  .form-error {
+    @apply text-sm text-error mt-1;
+  }
+  
+  /* Card Styles */
+  .card {
+    @apply bg-white rounded-lg shadow-md overflow-hidden transition-shadow duration-300 hover:shadow-lg;
+  }
+  
+  /* Dropdown Styles */
+  .dropdown-menu {
+    @apply absolute z-10 mt-1 w-full bg-white rounded-md shadow-lg overflow-hidden focus:outline-none;
+  }
+  
+  .dropdown-item {
+    @apply block px-4 py-2 text-sm text-black hover:bg-light-gray cursor-pointer;
+  }
+}

@@ -67,20 +67,21 @@ const Header = ({
   
   // Determine header background and text colors based on variant and scroll state
   const getHeaderClasses = () => {
-    let classes = 'fixed w-full z-50 transition-all duration-300 ';
-    
-    if (variant === 'transparent') {
-      if (scrolled) {
-        classes += 'bg-white text-black shadow-md py-2';
-      } else {
-        classes += 'bg-transparent py-4';
-      }
+  let classes = 'fixed w-full z-50 transition-all duration-300 ';
+
+  if (variant === 'transparent') {
+    if (scrolled) {
+      classes += 'bg-white text-black shadow-md py-2';
     } else {
-      classes += 'bg-white shadow-md py-3';
+      classes += 'bg-transparent text-white py-4';
     }
-    
-    return `${classes} ${className}`;
-  };
+  } else {
+    classes += 'bg-white shadow-md py-3';
+  }
+
+  return `${classes} ${className}`;
+};
+
   
   // Determine text color based on variant and scroll state
   const getTextColorClass = () => {
@@ -151,8 +152,8 @@ const Header = ({
         
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <div className="md:hidden py-4 animate-slide-in-right">
-            <nav className="flex flex-col space-y-4">
+          <div className="md:hidden py-4 animate-slide-in-right bg-white shadow-md">
+            <nav className="flex flex-col space-y-4 px-4 text-center">
               {navItems.map((item, index) => (
                 <Link
                   key={index}

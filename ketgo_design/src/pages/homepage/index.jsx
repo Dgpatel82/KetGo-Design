@@ -93,12 +93,13 @@ const Homepage = () => {
           <Image
             src={"https://image.lexica.art/full_jpg/45cc0ae0-efd5-4305-9e65-6b38b5536d24"}
             alt="Modern architecture building"
-            className="w-screen h-full object-cover object-right"
+            className="w-full h-full object-cover "
           />
           <div className="bg-black opacity-65 absolute z-0 inset-0 "></div>
         </div>
 
-        <div className="relative z-10 container mx-10 px-4 h-full mt-7 flex flex-col justify-center">
+        <div className="relative z-10 container mx-auto px-4 py-16 md:py-0 flex flex-col justify-center h-full">
+
           <div className="max-w-2xl">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-teal-400 mb-4 animate-fade-in">
               Transforming Visions Into Architectural Reality

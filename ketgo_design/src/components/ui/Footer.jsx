@@ -53,7 +53,7 @@ const Footer = ({
   
   // Render the logo
   const renderLogo = () => (
-    <Link to="/homepage" className="flex items-center">
+    <Link to="/homepage" className="flex items-center text-center justify-center">
       <Image
         src="/assets/images/logo.webp" // Replace with actual path
         alt="KetGo Logo"
@@ -67,24 +67,24 @@ const Footer = ({
   
   // Render full footer with all sections
   const renderFullFooter = () => (
-    <footer className={`bg-primary-dark text-white ${className}`} {...props}>
+    <footer className={`bg-primary-dark text-white text-center ${className}`} {...props}>
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
           {/* Logo and Company Info */}
-          <div className="lg:col-span-2">
+          <div className="lg:col-span-2 text-center">
             {renderLogo()}
-            <p className="mt-4 text-medium-gray max-w-md">
+            <p className="mt-4 text-medium-gray max-w-md mx-auto">
               KetGo Design is your trusted partner for construction and renovation projects. 
               With over 10 years of experience, we deliver quality craftsmanship and exceptional service.
             </p>
             
             {/* Social Links */}
-            <div className="mt-6 flex space-x-4">
+            <div className="mt-6 flex space-x-4  justify-center">
               {socialLinks.map((item) => (
                 <a 
                   key={item.name}
                   href={item.href}
-                  className="text-medium-gray hover:text-accent transition-colors duration-200"
+                  className="text-medium-gray hover:text-accent transition-colors duration-200 "
                   aria-label={item.name}
                 >
                   <Icon name={item.icon} size={20} />
@@ -129,11 +129,11 @@ const Footer = ({
           <div>
             <h3 className="text-lg font-heading font-semibold mb-4">Contact</h3>
             <ul className="space-y-3">
-              <li className="flex items-start">
-                <Icon name="MapPin" size={20} className="mr-2 mt-1 text-accent" />
+              <li className="flex items-center justify-center">
+                <Icon name="MapPin" size={72} className="mr-2 mt-1 text-accent" />
                 <span className="text-medium-gray">{contactInfo.address}</span>
               </li>
-              <li className="flex items-center">
+              <li className="flex items-center justify-center">
                 <Icon name="Phone" size={20} className="mr-2 text-accent" />
                 <a 
                   href={`tel:${contactInfo.phone}`}
@@ -142,7 +142,7 @@ const Footer = ({
                   {contactInfo.phone}
                 </a>
               </li>
-              <li className="flex items-center">
+              <li className="flex items-center justify-center">
                 <Icon name="Mail" size={20} className="mr-2 text-accent" />
                 <a 
                   href={`mailto:${contactInfo.email}`}
